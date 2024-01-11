@@ -1,41 +1,66 @@
-`
 
-const URL= 'https://api.api-ninjas.com/v1/randomword'
-const key= 'kYUsA3eJKJaaFQf7GUIHNg==292hFgaIEZIwjyg1'
-async function getData(URL) {
-    try {
-        //requesting a response REST API's
-        const response = await fetch(URL + "?" + new URLSearchParams({
-            apiKey: key,
-        }));
-        if (response.status != 200) {
-            throw new Error(response.statusText);
-        }
-        //convert reponse to json
-        const info = await response.json();
-        console.log(info);
+// const URL= `https://words-api5.p.rapidapi.com/api/v1/dict/random`;
+// const key= '4ff534677bmshcf2f4855075cdadp197218jsnfc2b05d611d9';
 
-    } catch (error) {
-        console.log(error);
-        document.querySelector("h1").textContent = "uh oh";
-    }
-}
-`
+// let data= []
+// async function getData(URL) {
+//     try {
+//         //requesting a response REST API's
+//         const response = await fetch(URL + "?" + new URLSearchParams({
+//             apiKey: key,
+//         }));
+//         if (response.status != 200) {
+//             throw new Error(response.statusText);
+//         }
+//         //convert reponse to json
+//         const info = await response.json();
+//         console.log(info);
 
-const axios = ('axios');
+//     } catch (error) {
+//         console.log(error);
+//         document.querySelector("h3").textContent = "uh oh";
+//     }
+// }
+//  getData(URL);
 
-const options = {
+// const URL = 'https://random-words5.p.rapidapi.com/getRandom';
+
+// async function getData(URL) {
+// const options = {
+// 	method: 'GET',
+// 	headers: {
+// 		'X-RapidAPI-Key': '4ff534677bmshcf2f4855075cdadp197218jsnfc2b05d611d9',
+// 		'X-RapidAPI-Host': 'random-words5.p.rapidapi.com'
+// 	}
+// };
+
+// try {
+// 	const response = await fetch(URL, options);
+// 	const result = await response.text();
+// 	console.log(result);
+// } catch (error) {
+// 	console.error(error);
+// }}
+const apiKey = '4ff534677bmshcf2f4855075cdadp197218jsnfc2b05d611d9';
+const apiUrl = 'https://words-api5.p.rapidapi.com/api/v1/dict/random';
+
+const requestOptions = {
   method: 'GET',
-  url: 'https://random-word-api.p.rapidapi.com/get_word',
   headers: {
-    'X-RapidAPI-Key': '4ff534677bmshcf2f4855075cdadp197218jsnfc2b05d611d9',
-    'X-RapidAPI-Host': 'random-word-api.p.rapidapi.com'
-  }
+    'Authorization': `Bearer ${apiKey}`,
+  },
 };
 
-try {
-	const response = axios.request(options);
-	console.log(response.data);
-} catch (error) {
-
-}
+fetch(apiUrl, requestOptions)
+  .then(response => {
+    if !response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then(data => {
+    outputElement.textContent = JSON.stringify(data, null, 2);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
