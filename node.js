@@ -41,26 +41,26 @@
 // } catch (error) {
 // 	console.error(error);
 // }}
-const apiKey = '4ff534677bmshcf2f4855075cdadp197218jsnfc2b05d611d9';
-const apiUrl = 'https://words-api5.p.rapidapi.com/api/v1/dict/random';
+// const apiKey = '4ff534677bmshcf2f4855075cdadp197218jsnfc2b05d611d9';
+// const apiUrl = 'https://words-api5.p.rapidapi.com/api/v1/dict/random';
 
-const requestOptions = {
-  method: 'GET',
-  headers: {
-    'Authorization': `Bearer ${apiKey}`,
-  },
-};
+// const requestOptions = {
+//   method: 'GET',
+//   headers: {
+//     'Authorization': `Bearer ${apiKey}`,
+//   },
+// };
 
-fetch(apiUrl, requestOptions)
-  .then(response => {
-    if !response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json();
-  })
-  .then(data => {
-    outputElement.textContent = JSON.stringify(data, null, 2);
-  })
-  .catch(error => {
-    console.error('Error:', error);
-  });
+// fetch(apiUrl, requestOptions)
+//   .then(response => {
+//     if !response.ok) {
+//       throw new Error('Network response was not ok');
+//     }
+//     return response.json();
+  
+//   .then(data => {
+//     outputElement.textContent = JSON.stringify(data, null, 2);
+//   })
+//   .catch(error => {
+//     console.error('Error:', error);
+//   });
