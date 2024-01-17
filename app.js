@@ -27,19 +27,39 @@ const wordArray = [
     "zucchini", "zincking", "zoneless",
     ]   
 
-const DOMselectors = {
-    input : document.querySelector(".wordInput"),
-    button: document.querySelector(".button"),
-    startButton: document.querySelector(".start"),
-}
-  let inputValue = input.value;
+const random = Math.floor(Math.random() * wordArray.length);
+console.log(random, wordArray[random]);
 
-  function game(){
-    startButton.addEventListener("click", (x) => {
-        x.preventDefault();
+let x = ("random");
+
+const input = document.querySelector(".wordInput");
+const button =  document.querySelector(".button");
+const startButton = document.querySelector(".start");
+const container= document.querySelector(".container");
+const card = document.querySelector(".card")
+
+let inputValue = input.value;
+
+
+function game(){
+    startButton.addEventListener("click", (event) => {
+        event.preventDefault();
         input.value="";
-    });
+
+        // document.getElementById("thing").textContent = "random";
+    })
   }
-  game()
-  
-  https://www.youtube.com/watch?v=B7pTIpUo9P4
+        
+function insert(){
+  document.querySelector("h3").textContent = "bye";
+}
+//   DOMSelectors.container.insertAdjacentHTML(
+//     "afterbegin",
+//     `<div class= "card" 
+//     <h3 class="wordd></h3>
+// </div>`
+//   )
+// }  
+game()
+insert()
+
