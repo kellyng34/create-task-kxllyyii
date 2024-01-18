@@ -28,38 +28,47 @@ const wordArray = [
     ]   
 
 const random = Math.floor(Math.random() * wordArray.length);
-console.log(random, wordArray[random]);
+console.log(wordArray[random]);
 
 let x = ("random");
 
 const input = document.querySelector(".wordInput");
-const button =  document.querySelector(".button");
-const startButton = document.querySelector(".start");
+const button1 =  document.querySelector(".btn");
+const button2 = document.querySelector(".btn2");
 const container= document.querySelector(".container");
 const card = document.querySelector(".card")
 
 let inputValue = input.value;
 
+let buttons = document.querySelectorAll(".btn", ".btn2")
 
 function game(){
-    startButton.addEventListener("click", (event) => {
+    buttons.addEventListener("click", (event) => {
         event.preventDefault();
         input.value="";
-
         // document.getElementById("thing").textContent = "random";
     })
   }
-        
-function insert(){
-  document.querySelector("h3").textContent = "bye";
+
+function clearh3(){
+    document.querySelector("h3").textContent ="";
 }
+function insert(){
+    button1.addEventListener("click", (e) => {
+    e.preventDefault();
+    document.querySelector("h3").textContent = (wordArray[random]);
+    })
+  }
+  game()
+  clearh3()
+  insert()
+
 //   DOMSelectors.container.insertAdjacentHTML(
 //     "afterbegin",
 //     `<div class= "card" 
-//     <h3 class="wordd></h3>
+//     <h3 class="wordd"></h3>
 // </div>`
 //   )
-// }  
+
 game()
-insert()
 
