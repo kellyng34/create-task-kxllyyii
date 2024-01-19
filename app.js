@@ -34,34 +34,43 @@ let x = ("random");
 
 const input = document.querySelector(".wordInput");
 const button1 =  document.querySelector(".btn");
-const button2 = document.querySelector(".btn2");
+const button2 = document.querySelector(".btnn");
 const container= document.querySelector(".container");
 const card = document.querySelector(".card")
 
 let inputValue = input.value;
 
-let buttons = document.querySelectorAll(".btn", ".btn2")
+let buttons = document.querySelector(".btn", ".btnn")
 
-function game(){
-    buttons.addEventListener("click", (event) => {
-        event.preventDefault();
-        input.value="";
-        // document.getElementById("thing").textContent = "random";
-    })
-  }
 
-function clearh3(){
-    document.querySelector("h3").textContent ="";
-}
 function insert(){
     button1.addEventListener("click", (e) => {
     e.preventDefault();
+    input.value="";
     document.querySelector("h3").textContent = (wordArray[random]);
     })
   }
-  game()
-  clearh3()
+
+function submit(){
+    button2.addEventListener("click", (x) =>{
+    x.preventDefault();
+    input.value="";
+    document.querySelector("h3").textContent ="";
+
+    })
+}
+
+function check(){
+  if ((input.value) === (wordArray[random])) {
+    console.log("hi")}
+  else {
+    console.log("incorrect")
+  }}
+
+
+  submit()
   insert()
+  check()
 
 //   DOMSelectors.container.insertAdjacentHTML(
 //     "afterbegin",
@@ -70,5 +79,4 @@ function insert(){
 // </div>`
 //   )
 
-game()
 
