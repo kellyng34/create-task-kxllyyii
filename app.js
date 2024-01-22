@@ -51,9 +51,12 @@ function insert(){
     })
   }
 
+// setTimeout(function(){
+//     console.log("Hello World");
+// }, 2000);
+
 function submit(){
-    button2.addEventListener("click", (x) =>{
-    x.preventDefault();
+    button2.addEventListener("click", () =>{
     input.value="";
     document.querySelector("h3").textContent ="";
 
@@ -61,11 +64,12 @@ function submit(){
 }
 
 function check(){
-  if ((input.value) === (wordArray[random])) {
-    console.log("hi")}
+  button2.addEventListener("submit", () => {
+  if ((input.value) == (wordArray[random])) {
+    console.log("correct")}
   else {
     console.log("incorrect")
-  }}
+}})}
 
 
   submit()
