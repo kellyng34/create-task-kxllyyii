@@ -27,22 +27,18 @@ const wordArray = [
   "zucchini","zincking","zoneless",
 ];
 
-
 const input = document.querySelector(".wordInput");
 const button1 = document.querySelector(".btn");
 const button2 = document.querySelector(".btnn");
 const button3 = document.querySelector(".logButton");
 const feedbackMessage = document.querySelector(".feedback-message");
 
-
 let currentRandomWord = getRandomWord();
 
-
 function getRandomWord() {
-  const randomIndex = Math.floor(Math.random() * wordArray.length);
-  return wordArray[randomIndex];
+  const random = Math.floor(Math.random() * wordArray.length);
+  return wordArray[random];
 }
-
 
 function insert() {
   button1.addEventListener("click", (e) => {
@@ -57,7 +53,6 @@ function insert() {
   });
 }
 
-
 function submit() {
   button2.addEventListener("click", (e) => {
     e.preventDefault();
@@ -71,19 +66,17 @@ function submit() {
   });
 }
 
-
 function logWords() {
   for (let i = 0; i < wordArray.length; i++) {
     console.log("Word:", wordArray[i]);
   }
 }
 
-
 button3.addEventListener("click", (e) => {
   e.preventDefault()
-    logWords();
+  logWords();
 });
-
 
 insert();
 submit();
+
