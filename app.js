@@ -11,22 +11,23 @@ const wordArray = [
   "junk","junkyard","jocooserie",
   "kilo","kangaroo","khwarazmian",
   "light","ligneous","leathercraft",
-  "monoxide","macaroni","meekness",
-  "neatness","nontoxic","newsroom",
-  "overbold","oxpeckers","optician",
-  "perforce","pilchard","prideful",
-  "quotient","quackery","quickset",
-  "reducing","reaccustoms","rashness",
+  "monoxide","macaroni","miscarriage",
+  "neatness","negotiation","nope",
+  "overbold","organisation","only",
+  "proud","prevalence","prideful",
+  "qualification","quackery","quit",
+  "reducing","reaccustoms","rude",
   "stimulus","sneering","supranaturalist",
   "turbaned","twilight","tetrapyramid",
   "unanachronously","unionism","underscrub",
-  "varicose","violator","villager",
-  "westward","wretched","wiriness",
-  "xenotime","xenology","xeronate",
-  "youthful","youngish","yeanling",
-  "zucchini","zincking","zoneless",
+  "vacuolations","violator","vite",
+  "west","wainscotings","wiriness",
+  "xanthophores","xenology","xolo",
+  "youth","youngish","yesternights",
+  "zucchini","zin","zincographer",
 ];
 
+//levels
 // x < 7 (easy) x = 7 (medium) x > 7 (hard)
 
 
