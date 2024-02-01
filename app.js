@@ -24,12 +24,11 @@ const wordArray = [
   "west","wainscotings","wiriness",
   "xanthophores","xenology","xolo",
   "youth","youngish","yesternights",
-  "zucchini","zin","zincographer",
+  "zucchini","zin","zincographer", 
 ];
 
 //levels
 // x < 7 (easy) x = 7 (medium) x > 7 (hard)
-
 
 const input = document.querySelector(".wordInput");
 const button1 = document.querySelector(".btn");
@@ -71,12 +70,23 @@ function submit() {
 }
 
 function logWords() {
-  for (let i = 0; i < wordArray.length; i++) {
-    console.log("Word:", wordArray[i]);
+  for (let i = 0; i < currentRandomWord.length; i++) {
+    console.log("Word:", currentRandomWord);
   }
-}
+  if (currentRandomWord.length <= 7 ){
+    document.querySelector("h5").textContent = ("difficulty level: " + "easy ");
+    setTimeout(() => {
+      document.querySelector("h5").textContent = "";
+    }, -3000);
+  }
+ else 
+  (currentRandomWord.length > 7); {
+    document.querySelector("h5").textContent = ("difficulty level: " + "hard ");
+  }
+  }
 
-button3.addEventListener("click", (e) => {
+
+button1.addEventListener("click", (e) => {
   e.preventDefault()
   logWords();
 });
