@@ -27,8 +27,7 @@ const wordArray = [
   "zucchini","zin","zincographer", 
 ];
 
-//levels
-// x < 7 (easy) x = 7 (medium) x > 7 (hard)
+
 
 const input = document.querySelector(".wordInput");
 const button1 = document.querySelector(".btn");
@@ -81,12 +80,22 @@ function submit() {
 }
 
 
-function logWords() {
+function difficulty() {
   for (let i = 0; i < wordArray.length; i++) {
     const currentWord = wordArray[i];
     console.log("Word:", currentWord);
+
+
+    const currentDifficulty = getDifficulty(currentWord);
+    console.log("Difficulty:", currentDifficulty);
   }
 }
+
+
+button3.addEventListener("click", (e) => {
+  e.preventDefault();
+  difficulty();
+});
 
 
 button4.addEventListener("click", (e) => {
